@@ -13,6 +13,11 @@ app.use(express.json());
 
 let todos = []; // In-memory DB
 
+// Root route to confirm backend is running
+app.get('/', (req, res) => {
+  res.send('Todo Summary Backend is running.');
+});
+
 // GET /todos
 app.get('/todos', (req, res) => {
   console.log('GET /todos called');
