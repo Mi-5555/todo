@@ -15,6 +15,16 @@
 
 ---
 
+## Live Deployment
+
+You can access the deployed versions of the application here:
+
+- Frontend (React app): https://todo-summary-assess.netlify.app
+
+- Backend (Express API): https://todo-summary-assess.onrender.com
+
+---
+
 ## Tech Stack
 
 | Layer     | Technology           |
@@ -36,3 +46,4 @@ graph TD
   B --> C[(Supabase DB)]
   B --> D[OpenAI API]
   B --> E[Slack Webhook]
+
