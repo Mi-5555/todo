@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
-const API_BASE = ''; // using proxy
+const API_BASE = 'https://todo-summary-assess.onrender.com'; // your backend URL
 
 export default function App() {
   const [todos, setTodos] = useState([]);
