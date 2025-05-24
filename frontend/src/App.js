@@ -12,7 +12,7 @@ export default function App() {
 
   const fetchTodos = async () => {
     try {
-      const res = await axios.get(`/todos`);
+      const res = await axios.get(`${API_BASE}/todos`);
       setTodos(res.data);
     } catch (error) {
       console.error("Failed to fetch todos:", error.message);
