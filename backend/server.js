@@ -1,4 +1,3 @@
-
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
@@ -13,6 +12,11 @@ app.use(cors());
 app.use(express.json());
 
 let todos = []; // In-memory DB
+
+app.get('/', (req, res) => {
+  res.send('Todo Summary Assistant Backend is Running');
+});
+
 
 // GET /todos
 app.get('/todos', (req, res) => {
