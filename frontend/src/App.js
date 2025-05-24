@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
-const API_BASE = 'https://todo-summary-assess.onrender.com'; // your backend URL
+const API_BASE = 'https://todo-summary-assess.onrender.com'; // ✅ your backend URL
 
 export default function App() {
   const [todos, setTodos] = useState([]);
@@ -22,7 +22,7 @@ export default function App() {
   const addTodo = async () => {
     if (!newTodo.trim()) return;
     try {
-      await axios.post(`/todos`, { text: newTodo });
+      await axios.post(`${API_BASE}/todos`, { text: newTodo }); // ✅ updated
       setNewTodo('');
       fetchTodos();
     } catch (error) {
@@ -32,7 +32,7 @@ export default function App() {
 
   const deleteTodo = async (id) => {
     try {
-      await axios.delete(`/todos/${id}`);
+      await axios.delete(`${API_BASE}/todos/${id}`); // ✅ updated
       fetchTodos();
     } catch (error) {
       console.error("Failed to delete todo:", error.message);
@@ -47,7 +47,7 @@ export default function App() {
   const updateTodo = async (id) => {
     if (!editingText.trim()) return;
     try {
-      await axios.put(`/todos/${id}`, { text: editingText });
+      await axios.put(`${API_BASE}/todos/${id}`, { text: editingText }); // ✅ updated
       setEditingId(null);
       setEditingText('');
       fetchTodos();
@@ -58,7 +58,7 @@ export default function App() {
 
   const summarizeTodos = async () => {
     try {
-      const res = await axios.post(`/summarize`);
+      const res = await axios.post(`${API_BASE}/summarize`); // ✅ updated
       setMessage(res.data.message || 'Summary sent.');
     } catch (error) {
       console.error("Summarize failed:", error.message);
